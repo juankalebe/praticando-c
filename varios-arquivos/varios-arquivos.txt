@@ -1,0 +1,6 @@
+arquivos.h: usa para variáveis globais, protótipos de função e definição de novos tipos. 
+incorpora ao arquivo.c usando o #include
+
+arquivos.c: implementação dos protótipos de função que estiverem no arquivo.h. nesse ponto C vc 
+tbm precisa dar um #include no aquivo.h para deixar relacionado tgldo. 
+vc faz #include "arquivo.h" -- precisa dessa aspas duplas mesmo. no main você coloca com as aspas duplas também
