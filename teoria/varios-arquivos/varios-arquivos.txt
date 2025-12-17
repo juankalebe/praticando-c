@@ -1,4 +1,6 @@
 arquivos.h: usa para variáveis globais, protótipos de função e definição de novos tipos. 
+novas structs voce coloca nesse .h também
+
 incorpora ao arquivo.c usando o #include
 
 arquivos.c: implementação dos protótipos de função que estiverem no arquivo.h. nesse ponto C vc 
