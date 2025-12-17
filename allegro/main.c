@@ -4,6 +4,7 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/keyboard.h>
 /*
+  Para compilar: gcc main.c -lallegro -lallegro_font -lallegro_ttf -lallegro_image
   573/3 = 191 -> largura
   644/4 = 161 -> altura
 */
@@ -41,8 +42,11 @@ int main (){
     al_wait_for_event(event_queue, &event);
     if( event.type == ALLEGRO_EVENT_DISPLAY_CLOSE ){
       break;
+    /*
+      próximas condições são para poder fazer o dragão de mover e mudar de aparência
+    */
     } else if( event.keyboard.keycode == ALLEGRO_KEY_RIGHT){
-      current_frame_y = 161;
+      current_frame_y = 161; //tá direto no al_draw_bitmap_region onde diz qual parte da imagem será usada
       pos_x += 20;
     } else if (event.keyboard.keycode == ALLEGRO_KEY_LEFT){
       current_frame_y = 161 *3;

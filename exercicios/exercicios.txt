@@ -1,4 +1,6 @@
 Todos do PROF PIETRO MARTINS são adaptações de ASCENCIO E CAMPOS, 2008.
+D: desafio que inventei
+G: proposta do gemini
 
 1) (PROF PIETRO MARTINS) Faça um programa que receba quatro números inteiros, calcule e mostre a soma desses números.
 1D) Faça um programa que receba N números inteiros, calcule e mostre a soma desses números.
@@ -9,3 +11,7 @@ Todos do PROF PIETRO MARTINS são adaptações de ASCENCIO E CAMPOS, 2008.
 
 3) (PROF PIETRO MARTINS) Faça um programa que receba o salário de um funcionário e o percentual de aumento, calcule e mostre o valor do aumento e o novo salário.
 3D) Faça um programa que receba o salário de N funcionários e o percentual de aumento respectivo escrito como x% pelo usuário, calcule e mostre o valor do aumento e o novo salário de cada um deles.
+
+4) (PROF PIETRO MARTINS) Jeremias possui um cronômetro que consegue marcar o tempo apenas em segundos. Sabendo disso, desenvolva um algoritmo que receba o tempo cronometrado, em segundos, e diga quantas horas, minutos e segundos se passaram a partir do tempo cronometrado.
+4D) Desenvolva um algoritmo que receba N tempos cronometrados em segundos e diga quantas horas, minutos e segundos cada um possui.
+4G) Crie um programa que leia dois horários (Largada e Chegada) no formato HH MM SS, calcule a duração da corrida e mostre o resultado. Use structs e funções
