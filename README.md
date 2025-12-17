@@ -2,6 +2,7 @@
 
 ## Comentários em C:
   // para comentar uma linha
+  
   /* */ para comentar um bloco de linhas
 
 ## Funções de saída
