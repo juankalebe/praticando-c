@@ -1,6 +1,11 @@
+Todos do PROF PIETRO MARTINS são adaptações de ASCENCIO E CAMPOS, 2008.
+
 1) (PROF PIETRO MARTINS) Faça um programa que receba quatro números inteiros, calcule e mostre a soma desses números.
 1D) Faça um programa que receba N números inteiros, calcule e mostre a soma desses números.
 
 
 2) (PROF PIETRO MARTINS) Faça um programa que receba três notas, calcule e mostre a média aritmética entra elas.
 2D) Faça um programa que receba N notas, calcule e mostre a média aritmética entra elas.
+
+3) (PROF PIETRO MARTINS) Faça um programa que receba o salário de um funcionário e o percentual de aumento, calcule e mostre o valor do aumento e o novo salário.
+3D) Faça um programa que receba o salário de N funcionários e o percentual de aumento respectivo escrito como x% pelo usuário, calcule e mostre o valor do aumento e o novo salário de cada um deles.
