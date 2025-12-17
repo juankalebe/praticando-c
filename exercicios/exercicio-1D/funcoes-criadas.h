@@ -1,0 +1,1 @@
+int somatorio(int vet[],int tam);
