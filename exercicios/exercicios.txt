@@ -23,3 +23,6 @@ Validação (A Regra de Ouro): Nem sempre 3 linhas formam um triângulo. Para ex
 Exemplo que falha: Lados 10, 2 e 1. (2+1 não é maior que 10, então as pontas nunca se tocam).
 Classificação: Se passar no teste acima, diga qual é o tipo: Equilátero: Todos os 3 lados iguais; Isósceles: 2 lados iguais e 1 diferente; Escaleno: Todos os 3 lados diferentes.
 Requisitos: usar operadores lógicos(and, or)
+
+6) (PROF PIETRO MARTINS) Desenvolva um algoritmo que simule uma calculadora. Você deve dar a opção de o usuário escolher entre:
+1 - Somar; 2 - Subtrair; 3 - Multiplicar; 4 - Dividir. O usuário só conseguirá processar dois números inteiros por vez.
