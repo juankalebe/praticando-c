@@ -15,3 +15,11 @@ G: proposta do gemini
 4) (PROF PIETRO MARTINS) Jeremias possui um cronômetro que consegue marcar o tempo apenas em segundos. Sabendo disso, desenvolva um algoritmo que receba o tempo cronometrado, em segundos, e diga quantas horas, minutos e segundos se passaram a partir do tempo cronometrado.
 4D) Desenvolva um algoritmo que receba N tempos cronometrados em segundos e diga quantas horas, minutos e segundos cada um possui.
 4G) Crie um programa que leia dois horários (Largada e Chegada) no formato HH MM SS, calcule a duração da corrida e mostre o resultado. Use structs e funções
+
+5) (PROF PIETRO MARTINS) Faça um programa que receba dois números e mostre o maior deles. Caso eles sejam iguais, deve-se mostrar a mensagem "Os números são iguais".
+5D) Faça um programa que receba N números e mostre o maior deles. Caso eles sejam iguais, deve-se mostrar a mensagem "Os números são todos iguais".
+5G) O Analista de Formas Geométricas: Faça um programa que: Receba 3 valores inteiros ou decimais (lado A, lado B, lado C);
+Validação (A Regra de Ouro): Nem sempre 3 linhas formam um triângulo. Para existir um triângulo, a soma de dois lados sempre deve ser maior que o terceiro lado.
+Exemplo que falha: Lados 10, 2 e 1. (2+1 não é maior que 10, então as pontas nunca se tocam).
+Classificação: Se passar no teste acima, diga qual é o tipo: Equilátero: Todos os 3 lados iguais; Isósceles: 2 lados iguais e 1 diferente; Escaleno: Todos os 3 lados diferentes.
+Requisitos: usar operadores lógicos(and, or)
