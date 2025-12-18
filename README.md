@@ -24,6 +24,14 @@
     formato para ler valores: scanf("%d%f%c", &<valor inteiro>, &<valor real>, &<caractere>);
     esses %X são chamados de máscaras que pegam o valor do lado direito seguindo a ordem sequencial
     o caractere & no início de cada valor após a primeira vírgula é porque o scanf precisa do endereço físico da variável na memória. A variável é uma região de memória e aí o & no início diz o endereço de memória certinho no qual está esse valor.
+    para cada variável a ser liga o scanf olha para o buffer do teclado e verifica se o que tem é do tipo que ele quer ou não
+    por isso que o \n (enter) entra para leitura de caractere, já que é uma tecla do meu teclado
+    Nos casos de int e float ele nao entra pq não atende esses tipos, tlgdo? ele é um caractere
+    uma coisa para resolver é colocar um espaço antes do %c no scanf. Funcionou. Ver vídeo aula 
+    https://youtu.be/qZOZxLwnDaA?si=X8GSy9mJz_lTFvcf
+    o fflush(); só funciona no windows, então usar esse espaço antes do caractere é uma boa msm
+    outra coisa que você pode fazer é colocar um scanf (ou um getchar) entre o scanf do primeiro caractere e do segundo
+    pq com isso ele vai tirar o \n do buffer (limpa o buffer do teclado)
     
   ### getchar
     formato para leitura de char: <variavel>  = getchar();
