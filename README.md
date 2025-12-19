@@ -66,6 +66,31 @@
       com isso a variável vai ocupara apenas 4bytes. Mas aí tem a questão de que o valor dele tem um limite menor do que o int né
       nesse caso vai ser de -32768 até 32767 (tem essa diferença pq em binário ele usa a representação de complemento de 2, tendo o MSB como bit de sinal)
       a máscara para uma variável desse tipo é %hi ou %d
+      enquanto isso um número inteiro tem o seguinte intervalo
+      -2.147.483.648 a 2.147.483.647 (funciona com a mesma ideia de representação com bit de sinal e complemento de 2)
+      quando soma 1 a esse limite positivo, há um estouro de memória e aí vai para o limite negativo - pq aí ocorre uma confusão após somar mais 1 bit e ele acaba ficando no formato de complemento de 2 com aquele valor negativo
+      uso do operador long para aumentar o espaço de memória
+      máscara: %li ou %ld
+      pode usar long long int (isso pq o long int ocupa o mesmo espaço que um int em algumas arquiteturas)
+      e aí nesse caso a máscara vira %lli ou %lld
+      no caso do vídeo o long int e o int ocupam 4 bytes e o long long int ocupa 8 bytes
+      só aceita até long long int (nao vai mais um long) - pq aí já é 64 bits
+      ** o short short int não funciona, o short só vai uma vez
+
+
+      e o float?
+      ele ocupa o mesmo espaço de memória, mas o arranjo é diferente, já que há a parte fracionada
+      short float nao é aceito
+      long float tbm nao é aceito
+      aí no caso é o double que é um float com mais precisao - seria uma precisao dupla
+      e o double ocupa 8 bytes
+      ele é justamente para quando se precisa de uma grande precisao na área decimal
+      máscara do double: %lf
+      lembrando que por padrão as impressoes sao até 6 dígitos após a vírgula
+      long double é possível? sim. ele ocupa 16 bytes
+      máscara: %Lf (funciona em distribuições linux ou no mac direto no printf)
+      no caso do windows ele nao suporta tudo isso de memória, por isso usa-se a funcao:
+      __mingw_print(); - usa da mesma forma que do printf. usa o %Lf
 
 ## Repositório para praticar linguagem C
 
