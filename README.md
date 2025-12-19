@@ -43,6 +43,30 @@
     formato para leitura de char: <variavel>  = fgetc(stdin);
     o fgetc pega o caractere que for inserido e dá isso como retorno. A observação é o parâmetro stdin que equivale a dizer que será o caractere vindo do teclado, já que o fgetc faz parte da família de funções para pegar caracteres arquivos/files, por isso o f de files no início.
 
+## Memória
+  ### Unidades medida
+      isso é útil pq teremos aplicações que a ocupação de memória importa
+      bit = binary digit. É a menor unidade de armazenamento do computador (um 0 ou 1)
+      1 byte = 8 bits
+      1 kilobyte = 1024 bytes
+      1024 kilobytes = 1 Megabyte
+      1024 megabytes = 1 gigabyte
+      1024 gigabytes = 1 terabyte
+
+      como saber quanto de memória ocupa cada variável
+      operador sizeof
+      sizeof x ou sizeof (int) - ele retorna um int (entao pra printar é um %d de máscara). E o número é a quantidade de bytes
+      para pegar de um tipo primitivo: sizeof(int) - nesse caso nao pode tirar o () - retorna 4, ou seja, um int ocupa 4 bytes ou 32 bits na memória.
+      para pegar de uma variável sizeof(x) ou sizeof x
+
+      sizeof não é uma função e sim um operador, por isso que no caso da variável pode deixar de usar o parênteses
+
+      uso do operador short para diminuir o consumo de memória. basicamente no caso de um int que ocupa 4bytes, ele vai reduzir para a metade.
+      Para usar ele vc faz na hora da declaração da variável, usando "short int <variavel>;"
+      com isso a variável vai ocupara apenas 4bytes. Mas aí tem a questão de que o valor dele tem um limite menor do que o int né
+      nesse caso vai ser de -32768 até 32767 (tem essa diferença pq em binário ele usa a representação de complemento de 2, tendo o MSB como bit de sinal)
+      a máscara para uma variável desse tipo é %hi ou %d
+
 ## Repositório para praticar linguagem C
 
 Pasta break-continue possui exemplos desses dois comandos
