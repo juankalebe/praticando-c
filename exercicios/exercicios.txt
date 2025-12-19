@@ -26,3 +26,25 @@ Requisitos: usar operadores lógicos(and, or)
 
 6) (PROF PIETRO MARTINS) Desenvolva um algoritmo que simule uma calculadora. Você deve dar a opção de o usuário escolher entre:
 1 - Somar; 2 - Subtrair; 3 - Multiplicar; 4 - Dividir. O usuário só conseguirá processar dois números inteiros por vez.
+6D)
+6G)
+
+7) (PROF PIETRO MARTINS) A nota final de um estudante é calculada a partir
+de três notas atribuídas respectivamente a um trabalho de Laboratório, a
+uma avaliação semestral e a um exame final. A média das três notas mencionadas
+anteriormente obedece aos pesos a seguir:
+
+nota                        Peso
+trabalho de Laboratório     2
+avaliação semestral         3
+exame final                 5
+
+Faça um programa que receba as três notas, calcule e mostre a média
+ponderada e o conceito que segue a tabela abaixo:
+
+Média ponderada             Conceito
+8~10                        A
+7~8                         B
+6~7                         C
+5~6                         D
+0~5                         E
