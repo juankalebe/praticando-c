@@ -19,8 +19,16 @@
   fazendo resultado = ++contador; aí sim a atribuicao das variáveis é feita com o contador incrementado
   += -> a += b é o mesmo que a = a + b. é um operador de incremento, mas aqui vc define qual vai ser o valor do incremento 
   -- -> mesmo que o ++, mas agora é decremento
-  -= -> mesmo que o +=, mas agora é decremento
 
+## Operações lógicas
+  && -> equivalente ao "e"
+  || -> equivalente ao "ou"
+  != -> equiavlente a negação
+
+## Estruturas de repetição
+  FOR -> for(variavel; condicoes; incremento){comandos}
+  WHILE -> while(condicoes){comandos}
+  DO WHILE -> do{comandos}while(condicoes);
 
 ## Funções de saída
   ### printf
