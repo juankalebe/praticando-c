@@ -5,6 +5,23 @@
   
   /* */ para comentar um bloco de linhas
 
+## Operações matemáticas
+  + -> 
+  * ->
+  - ->
+  / -> se for para o int, ele coloca só a parte inteira, sem aproximar. Se fizer pelo float sem casas decimais (%.0f) ele aproxima
+  % -> retorna o resto da divisão entre dois números
+  ++ -> operador de incremento. exemplo: a++: incrementa 1 a variavel a e o ++a tambémm
+  exemplo de diferença: printf("%d",a++); -> retorna valor de a, porque primeiro ele pega a variável para printar e depois ele soma
+  printf("%d",++a); -> retorna valor de "a" mais 1, porque primeiro ele soma 1 ao valor de "a" e depois ele pega o "a" pra printar
+  isso faz a mesma coisa que o +=1
+  obs: resultado = contador++; -> assim a variavel resultado vai ficar com o valor de contador e depois a variavel contador vai ser incrementada por 1, ou seja, primeiro atribuiu a variável e depois fez o incremento
+  fazendo resultado = ++contador; aí sim a atribuicao das variáveis é feita com o contador incrementado
+  += -> a += b é o mesmo que a = a + b. é um operador de incremento, mas aqui vc define qual vai ser o valor do incremento 
+  -- -> mesmo que o ++, mas agora é decremento
+  -= -> mesmo que o +=, mas agora é decremento
+
+
 ## Funções de saída
   ### printf
     > Formato para imprimir valores: printf("conteudo %d %f %c %s", <valor inteiro>, <valor real>, <caractere>, <string>);
@@ -12,12 +29,18 @@
     > Em cada um desses < xxxx > o que importa é ter o valor final do tipo correto, ou seja, pode ser uma variável, uma função ou uma operação
     > Por padrão a máscara %f imprime valores reais com 6 números após a vírgula. Para formatar isso usamos: %.2f -> com isso eu estou falando que serão 2 números após a vírgula (no caso é ponto)
     
+    Se você fizer <variavel_inteira> = printf("conteudo");
+    O retorno da funcao printf será a quantidade de caracteres entre as aspas duplas. Os caracteres de escape equivalem a apenas um. \n contabiliza 1.
+
+    #### Caracteres de escape
     Para formatação da impressão do printf temos os caracteres de escape: 
       \n -> equivale a um pulo de linha (um enter)
       \t -> equivale a um espaço ou uma tabulação
+      \" -> aspa dupla
+      \' -> aspa simples
+      \\ -> contrabarra
+      (existem outros menos utilizados)
     
-    Se você fizer <variavel_inteira> = printf("conteudo");
-    O retorno da funcao printf será a quantidade de caracteres entre as aspas duplas. Os caracteres de escape equivalem a apenas um. \n contabiliza 1.
 
 ## Funções de entrada
   ### scanf
@@ -42,6 +65,13 @@
   ### fgetc
     formato para leitura de char: <variavel>  = fgetc(stdin);
     o fgetc pega o caractere que for inserido e dá isso como retorno. A observação é o parâmetro stdin que equivale a dizer que será o caractere vindo do teclado, já que o fgetc faz parte da família de funções para pegar caracteres arquivos/files, por isso o f de files no início.
+
+## Tipos de variáveis
+  ### Conversão de tipos ou Casting
+    de int para float. Sendo número direto vc pode simplesmente colocar ".0", pq com isso vc tá dando a parte decimal pra ele
+    para uma variável vc faz (float) <variavel>
+    pode também converter de float pra inteiro, da mesma forma, o cuidado é só se ligar que vc vai perder a parte decimal
+    dá pra mudar de caracteres tbm
 
 ## Memória
   ### Unidades medida
