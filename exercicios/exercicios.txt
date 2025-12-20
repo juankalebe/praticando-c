@@ -1,4 +1,4 @@
-Todos do PROF PIETRO MARTINS são adaptações de ASCENCIO E CAMPOS, 2008.
+Todos do PROF PIETRO MARTINS são adaptações de ASCENCIO E CAMPOS, 2008 (nem todos na verdade)
 D: desafio que inventei
 G: proposta do gemini
 
@@ -48,3 +48,14 @@ Média ponderada             Conceito
 6~7                         C
 5~6                         D
 0~5                         E
+
+7D)
+7G)
+
+
+8) (PROF PIETRO MARTINS) Desenvolva um algoritmo que some todos os números inteiros compreendidos entre 1 e 10 (inclusive)
+8D)
+8G)
+
+9) (PROF PIETRO MARTINS) Faça um programa que mostre os oito primeiros termos da sequência de Fibonacci
+0 - 1 - 1 - 2 - 3 - 5 - 8 - 13 - 21 - 34 - 55 - ...  
