@@ -59,3 +59,9 @@ Média ponderada             Conceito
 
 9) (PROF PIETRO MARTINS) Faça um programa que mostre os oito primeiros termos da sequência de Fibonacci
 0 - 1 - 1 - 2 - 3 - 5 - 8 - 13 - 21 - 34 - 55 - ...  
+9D)
+9G)
+
+10) (PROF PIETRO MARTINS) Desenvolva um algoritmo que mostre a tabuada de todos os números inteiros compreendidos entre 1 e 10 (inclusive)
+10D)
+10G)
