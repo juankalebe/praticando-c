@@ -26,5 +26,8 @@ int main (){
         }
     }
     printf("\n");
+
+    printf("Pressione qualquer tecla para finalizar");
+    getchar();
     return 0;
 }

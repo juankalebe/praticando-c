@@ -48,6 +48,15 @@
       \' -> aspa simples
       \\ -> contrabarra
       (existem outros menos utilizados)
+
+    Formatação de números na másca de inteiro (%d):
+      Usando printf com %0Nd
+      O especificador de formato que você precisa é %0*d, onde: 
+      % marca o início do especificador.
+      0 é a flag que indica que o preenchimento deve ser feito com zeros.
+      * (ou um número fixo como 3, 5, etc.) especifica a largura mínima total do campo. Se o número tiver menos dígitos que a largura especificada, zeros serão adicionados à esquerda.
+      d especifica que o argumento é um inteiro decimal assinado. 
+
     
 
 ## Funções de entrada
@@ -78,6 +87,8 @@
   ### Conversão de tipos ou Casting
     de int para float. Sendo número direto vc pode simplesmente colocar ".0", pq com isso vc tá dando a parte decimal pra ele
     para uma variável vc faz (float) <variavel>
+    colocar esse ".0" é importante para divisoes também que voce nao quer arredondar tlgdo, pq com isso vc força a manter as casas decimais
+
     pode também converter de float pra inteiro, da mesma forma, o cuidado é só se ligar que vc vai perder a parte decimal
     dá pra mudar de caracteres tbm
 
@@ -129,6 +140,70 @@
       máscara: %Lf (funciona em distribuições linux ou no mac direto no printf)
       no caso do windows ele nao suporta tudo isso de memória, por isso usa-se a funcao:
       __mingw_print(); - usa da mesma forma que do printf. usa o %Lf
+
+      operador unsigned (numero sem sinal)
+      mascara muda de %d para %u
+      limite para esse tipo: 4.294.967.295 (fica tanto a parte positiva quanto a negativa focadas em mostrar numeros positivos, por isso dobra) - isso acontece pq agora todos os bits serao usados representar o numero e nao mais o sinal
+      unsigned int x; -> seria uma variavel que só dá pra ser positivo
+      pode usar unsigned short int y;  por exemplo -> para imprimir nesse caso seria com %hu ou %d
+      pode usar unsigned long int y;  por exemplo -> para imprimir nesse caso seria com %lu
+
+## Tabela ASCII
+  O problema de acentuação com o português nao acontece no linux (mesmo sem a bibilioteca), é algo mais do windows mesmo
+  tabela ascii -> computador só entende numeros
+  nao há acentuação na tabela ascii
+    1 byte = 8 bits -> -128 até 127 -> seria o tamanho para a tabela ascii inicial
+    unsigned 1 byte -> 0 até 255 -> seria o tamanho para a tabela ascii extendida
+
+  tabela ascii versão extendida (com acentuação)
+
+  aí para resolver no windows: #include <locale.h>
+  e depois inicializa:
+    setlocale(LC_ALL, NULL); //LC_ALL vai mudar o tipo de localização (OU SEJA, A TABELA ASCII). esse null é o padrão da linguagem C, ou seja, a tabela ascii normal
+    setlocale(LC_ALL, ""); // esse pega o sistema operacional do computador em si (nao dá pra garantir que todos estarao em portugues)
+    setlocale(LC_ALL, "Portuguese"); // forca para usar o padrão do brasil
+
+    para confirmar o sistema que está sendo usado: printf("%s\n",setlocale(LC_ALL,"Portuguese)); -> com isso ele dá o retorno dessa funcao, mostrando qual o sistema que está
+
+## Execução do programa em outras máquinas
+    parece que eu vou ter que usar o docker para exportar bibliotecas, mas por hora eu consegui assim:
+
+    considerando que eu estou pelo wsl:
+    intalei:
+    sudo apt-get install mingw-w64
+
+    na hora de compilar (o windows nao reconhece o .x) -> direcionado para rodar no windows viu
+    x86_64-w64-mingw32-gcc meucodigo.c -o meucodigo.exe
+    fazendo assim ele nao reconheceu minha biblioteca locale.h e fica dando problema com acentos
+    mas pelo menos funcionou clicando pela interface gráfica
+    a única precaução foi colocar um getchar no final pra ele nao sumir direto
+
+## Criando funções
+  segurando ctrl e clicando na função no código main, vc é levado até onde está essa função para poder ver como ela é (mesmo que esteja em outro arquivo) -> isso funciona para outras coisas tbm, como variável
+
+  PROCEDIMENTOS POR REFERÊNCIA:
+  void calckW(float v_sal, float q_kw, float *v_kw, float *v_rs, float *v_dsc){ 
+    /*para manter como referência você coloca um asterisco antes da variável. 
+    Com isso esse valor vai ser alterado localmente aqui, mas irá atualizar na main após chamar esta funcao
+    Ou seja, vai servir como uma saída tbm
+    O asterisco deve continuar acompanhando essas variáveis no bloco de comandos
+    Para chamar essa funcao no main vc vai fazer normal a questao dos parametros. A diferença é que você
+    nao vai precisar atribuir a nenhuma outra variável e as posições que forem para referência você deverá fazer
+    &<variavel1>, &<variavel1> 
+    nessa referência vc está trabalhando com o endereço de memória dessa variável*/
+    *v_kw = v_sal / 1000;
+    *v_rs = *v_kw * q_kw;
+    *v_dsc = *v_rs * 0.85;
+    }
+
+    voce pode criar funcoes do tipo bool que dá retorno de true ou false. Útil para funcoes que servem para condicionais
+    Nesses casos vc pode usar um int retornando 0 para falso e 1 para verdadeiro também
+    Em C, variáveis booleanas armazenam true ou false, mas você precisa incluir <stdbool.h>
+
+
+
+## Debug
+  online: https://www.onlinegdb.com/online_c_compiler
 
 ## Repositório para praticar linguagem C
 
