@@ -6,7 +6,7 @@ sabendo que são descontados 8% para imposto de renda.*/
 #include <stdlib.h>
 
 int main (){
-    float imposto=8.0/100, diaria=45.00, dias;
+    float imposto=8.0/100, diaria=45.00, dias; //sendo float abre prescedente para pagarem o valor de meio dia de trabalho
     char verificao = '\n';
 
     while (verificao == '\n'){
