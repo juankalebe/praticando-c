@@ -1,0 +1,90 @@
+/*21.12.25 Faça um programa que carregue um vetor e nove elementos numéricos inteiros, calcule e mostre 
+os números primos e suas respectivas posições.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main (){
+    //int vetor[9];
+    int qtd_primos=0, i;
+
+    // Contabilizando a quantidade de numeros primos em um intervalo
+    // Numeros primos até 100 = 10 * 10. Então só preciso verificar do 2 ao 7 (numeros primos menores que 10)
+    // Isso também vem do teste da primalidade que verifica os primos até a raiz do maior numero do meu intervalo
+    for(i=2; i <= 100; i++){
+        if (((i % 2 == 0) && i != 2) || ((i % 3 == 0) && i != 3) || ((i % 5 == 0) && i != 5)|| ((i % 7 == 0) && i != 7)){
+            continue;
+        } else {
+            qtd_primos += 1;
+        }
+    }
+
+    //Criando o meu vetor de numeros primos
+    int primos[qtd_primos]; //0 a qtd_primos-1
+    
+    //Zerando todo meu vetor para impedir buffer
+    for (i=0; i<25; i++)
+        primos[i]=0;    
+
+    // Preenchendo o vetor de numeros primos
+    i=2;
+    for (int j=0;j<25;j++){
+        while(i<=100){
+            if (((i % 2 == 0) && i != 2) || ((i % 3 == 0) && i != 3) || ((i % 5 == 0) && i != 5)|| ((i % 7 == 0) && i != 7)){
+                i+=1;
+                continue;
+            } else if(primos[j] == 0){
+                primos[j] = i;
+                i+=1;
+                break;
+            }
+        }
+    }
+    /*
+    for (i=0; i<25; i++){
+        printf("%d ", primos[i]);
+    }
+    printf("\n");*/
+    
+    // Comecando com a parte do usuário
+    int usuario[9]={0,31,15,65,41,80,2,79,8};
+    char verificao = '0';
+
+    while (verificao == '0')
+    {
+        //system("clear");
+
+        // Inicializa o gerador de números aleatórios com o tempo atual (semente)
+        srand(time(NULL)); 
+
+        // Preenche o vetor do usuário com números aleatórios
+        //for (i = 0; i < 9; i++) {
+        //    usuario[i] = rand() % 100; //aqui ta limitando numeros até 100
+        //}
+        
+        for (i=0; i<9; i++){
+        printf("%d ", usuario[i]);
+        }
+        printf("\n");
+
+        // Condição para ser primo: ser divisível por 1 e por si mesmo
+        for (i = 0; i < 9; i++) {
+            // Retirando o caso dos pares. O unico par que é primo é o numero 2
+            for (int j=0; j<qtd_primos;j++)
+                if ((usuario[i] != primos[j]) && (usuario[i] % primos[j] == 0)){
+                    // nao é primo pq nao faz parte do conjunto de primos e é divisível por um deles
+                    continue;
+                } else{
+                    printf("%d é primo. Posição: %d\n",usuario[i],i);
+                    break;
+                }
+        }
+        printf("\n");
+        printf("Pressione 0 para rodar novamente ou qualquer outra tecla para finalizar ");
+        verificao = getchar();
+        printf("\n");
+    }
+
+    return 0;
+}

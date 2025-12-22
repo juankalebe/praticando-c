@@ -1,0 +1,58 @@
+/*21.12.25 Sabe-se que o quilowatt de energia custa um milésimo do salário mínimo. Faça um procedimento
+que receba o valor do salário mínimo e quantidade de quilowatts consumida por uma residência. O procedimento deve calcular
+e retornar através de passagem de parâmetros por referência.
+
+a) valor, em reais, de cada quilowatt
+b) o valor, em reais, a ser pago por essa residência
+c) o valor, em reais, a ser pago com desconto de 15%
+
+Sabendo disso, desenvolva um algoritmo que peça para o usuário inserir o valor do salário mínimo e a quantidade de quilowatts
+consumida. Invoque o respectivo procedimento e mostre na tela as informações dos itens a, b e c.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "funcoes-criadas.h"
+/*
+    Procedimento com passagem de referências retorna mais de uma variável e com isso você nao consegue fazer direto pelo return
+*/
+
+void calckW(float v_sal, float q_kw, float *v_kw, float *v_rs, float *v_dsc){ 
+    /*para manter como referência você coloca um asterisco antes da variável. 
+    Com isso esse valor vai ser alterado localmente aqui, mas irá atualizar na main após chamar esta funcao
+    Ou seja, vai servir como uma saída tbm
+    O asterisco deve continuar acompanhando essas variáveis no bloco de comandos
+    Para chamar essa funcao no main vc vai fazer normal a questao dos parametros. A diferença é que você
+    nao vai precisar atribuir a nenhuma outra variável e as posições que forem para referência você deverá fazer
+    &<variavel1>, &<variavel1> 
+    nessa referência vc está trabalhando com o endereço de memória dessa variável*/
+    *v_kw = v_sal / 1000;
+    *v_rs = *v_kw * q_kw;
+    *v_dsc = *v_rs * 0.85;
+    
+}
+
+int main (){
+    edf residencia1;
+    float sal_minimo;
+    char verificao = '0';
+    // vou manter com as variáveis da struct, pq nao to a fim de criar mais
+    while (verificao == '0')
+    {
+        printf("Salário mínimo vigente: ");
+        scanf("%f",&sal_minimo);
+        printf("Quantidade de quilowatt consumida: ");
+        scanf("%f",&residencia1.kw_consumido);
+
+        calckW(sal_minimo,residencia1.kw_consumido,&residencia1.kw_custo,&residencia1.fatura,&residencia1.fatura_desc);
+        
+        printf("\nCusto do quilowatt: R$ %.2f\n",residencia1.kw_custo);
+        printf("Fatura de energia: R$ %.2f\n",residencia1.fatura);
+        printf("Fatura de energia com desconto de 15%%: R$ %.2f\n\n",residencia1.fatura_desc);
+        
+        getchar(); // retirando o enter que sobrou no buffer após inserir esses dados
+        printf("Pressione 0 para rodar novamente ou qualquer outra tecla para finalizar ");
+        verificao = getchar();
+    }
+
+    return 0;
+}
