@@ -13,7 +13,9 @@ G: proposta do gemini
 #6 3D) Faça um programa que receba o salário de N funcionários e o percentual de aumento respectivo escrito como x% pelo usuário, calcule e mostre o valor do aumento e o novo salário de cada um deles.
 
 #7 4) (PROF PIETRO MARTINS) Jeremias possui um cronômetro que consegue marcar o tempo apenas em segundos. Sabendo disso, desenvolva um algoritmo que receba o tempo cronometrado, em segundos, e diga quantas horas, minutos e segundos se passaram a partir do tempo cronometrado.
+
 #8 4D) Desenvolva um algoritmo que receba N tempos cronometrados em segundos e diga quantas horas, minutos e segundos cada um possui.
+
 #9 4G) Crie um programa que leia dois horários (Largada e Chegada) no formato HH MM SS, calcule a duração da corrida e mostre o resultado. Use structs e funções
 
 #10 5) (PROF PIETRO MARTINS) Faça um programa que receba dois números e mostre o maior deles. Caso eles sejam iguais, deve-se mostrar a mensagem "Os números são iguais".
@@ -105,6 +107,19 @@ encerrar com uma única mensagem dizendo "Chave não encontrada"
 dados de três pessoas: nome, idade, peso e altura. Ao final, o algoritmo
 deve mostrar na tela o nome e a idade da primeira pessoa e o peso e a
 altura da última pessoa.
+
+
+#23 (PROF WAGNER GASPAR) Escreva um programa que leia um valor de despesa de restaurante, o valor da gorjeta (em
+porcentagem) e o número de pessoas para dividir a conta. Imprima o valor que cada um deve pagar.
+Assuma que a conta será dividida igualmente.
+
+#24 Uma empresa contrata um encanador a R$ 45,00 por dia. Faça um programa que solicite o
+número de dias trabalhados pelo encanador e imprima a quantia líquida que deverá ser paga,
+sabendo que são descontados 8% para imposto de renda.
+
+#25 Crie um programa em C que permita fazer a conversão cambial entre Reais e Dólares. Considere
+como taxa de câmbio US$1,0 = R$5,30. Leia um valor em Reais e mostre o correspondente em
+Dólares.
 
 ---- nao realizados
 5D) Faça um programa que receba N números e mostre o maior deles. Caso eles sejam iguais, deve-se mostrar a mensagem "Os números são todos iguais".
