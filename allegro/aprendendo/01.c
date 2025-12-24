@@ -36,7 +36,7 @@ int main()
             al_clear_to_color(al_map_rgb(0, 0, 0)); //para deixar a tela preta //al_map_rgb é usado para passar cor pelo RGB de 0 a 255
             al_draw_text(font, al_map_rgb(255, 255, 255), 20, 20, 0, "Hello world!");//aqui é para desenhar o texto. diz a fonte, a cor, a cor e a posição
             al_flip_display();
-
+            
             redraw = false;
         }
     }
