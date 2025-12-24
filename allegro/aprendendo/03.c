@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <allegro5/allegro5.h>
-#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_font.h> //complemento adicionado para poder renderizar textos
+#include <allegro5/allegro_image.h> //complemento adicionado para poder carregar imagens
 
+//para compilar no terminal: gcc hello.c -o hello $(pkg-config allegro-5 allegro_font-5 allegro_image-5 --libs --cflags)
+//hello.c: nome do arquivo c
+//hello: nome do executável final
 int main()
 {
     //verificação de inicialização (se foi true ou false) - tá usando o operador de negação justamente para retornar true para o IF quando der algo de errado na função tlgdo
@@ -44,6 +48,20 @@ int main()
         printf("couldn't initialize font\n");
         return 1;
     }
+
+    if(!al_init_image_addon()) //inicializando o complemento da imagem para poder importar com o load bitmap
+    {
+        printf("couldn't initialize image addon\n");
+        return 1;
+    }
+
+    ALLEGRO_BITMAP* mysha = al_load_bitmap("mysha.png"); //para importar a imagem que está no meu repositório
+    if(!mysha) //verificando se deu algum erro
+    {
+        printf("couldn't load mysha\n");
+        return 1;
+    }
+
     //SISTEMA DE EVENTOS DE NOVO
     al_register_event_source(queue, al_get_keyboard_event_source());
     al_register_event_source(queue, al_get_display_event_source(disp));
@@ -77,14 +95,21 @@ int main()
         if(redraw && al_is_event_queue_empty(queue))
         {
             al_clear_to_color(al_map_rgb(0, 0, 0));
-            al_draw_text(font, al_map_rgb(168, 50, 70), 320, 240, 0, "Hello world!");
-            al_flip_display();
+            
+            al_draw_bitmap(mysha, 100, 100, 0); //para poder renderizar a imagem importada na tela
+            //al_draw_tinted_bitmap(mysha,al_map_rgba_f(0.5,0.5,0.5,0.5),100,100,0); //para pintar e mudar transparência
+            al_draw_text(font, al_map_rgb(168, 50, 70), 320, 240, 0, "Hello world!"); 
+            //essa ordem aqui do que vc está desenhando importa. É como se fosse camadas
+            //fazendo desse jeito aqui o meu texto aparece em cima da imagem
+
+            al_flip_display(); //parece que é o que faz aparecer as coisas na tela
 
             redraw = false;
         }
     }
 
     //liberar recursos após o loop
+    al_destroy_bitmap(mysha); // destruindo o recurso para a imagem importada
     al_destroy_font(font);
     al_destroy_display(disp);
     al_destroy_timer(timer);
