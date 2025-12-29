@@ -11,10 +11,12 @@ int main (){
 
 	while (verificao == '\n'){
 		printf("Leituras:\n");
-		printf("Quer a tabuada de qual número? ");
-		scanf("%d",&num);
+        do{
+            printf("Escolha um número de 1 e 10 para visualizar a tabuada: ");
+            scanf("%d",&num);
+        }while(num<1 || num >10); // verificar se está dentro do intervalo desejado (requisito do exercício)
         
-        printf("Tabuada do %d:\n",num);
+        printf("\nTabuada do %d:\n",num);
 		for (int i = 1; i <= 10; i++){
             printf("%d x %d = %d\n",num,i,num*i);
         }
