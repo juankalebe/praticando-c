@@ -5,9 +5,9 @@
 #include <stdlib.h>
 
 int main (){
-    int i=1, soma=0;
+    int i=1, soma=0; // para garantir não pegar valores que já estejam nessa região da memória
 
-	while (i < 1000){
+	while (i <= 1000){
 		soma += i;
         i += 2;
     }
