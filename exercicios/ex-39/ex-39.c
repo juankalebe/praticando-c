@@ -7,29 +7,20 @@ pertencer entre o intervalo de 0 a 10). Cada nota deve ser validada separadament
 
 int main (){
     float nota1, nota2;
-    char verif = '\n';
-
-    while (verif == '\n'){
-        // Leituras
-        printf("Nota 1: ");
+    // Leituras
+    printf("Nota 1: ");
+    scanf("%f",&nota1);
+    while (nota1 < 0 || nota1 > 10){
+        printf("Nota inválida. Insira novamente.\nNota 1: ");
         scanf("%f",&nota1);
-        while (nota1 < 0 || nota1 > 10){
-            printf("Nota inválida. Insira novamente.\nNota 1: ");
-            scanf("%f",&nota1);
-        }
-        printf("Nota 2: ");
+    }
+    printf("Nota 2: ");
+    scanf("%f",&nota2);
+    while (nota2 < 0 || nota2 > 10){
+        printf("Nota inválida. Insira novamente.\nNota 2: ");
         scanf("%f",&nota2);
-        while (nota2 < 0 || nota2 > 10){
-            printf("Nota inválida. Insira novamente.\nNota 2: ");
-            scanf("%f",&nota2);
-        }
-
-        printf("Média semestral: %2.2f\n", (nota1+nota2)/2.0);
-
-        getchar();
-        printf("Pressione ENTER para repetir ou outra tecla para encerrar ");
-        verif = getchar();
     }
 
+    printf("Média semestral: %2.2f\n", (nota1+nota2)/2.0);
     return 0;
 }
