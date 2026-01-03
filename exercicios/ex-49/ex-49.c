@@ -14,7 +14,7 @@ int main (){
     for (int i=1; i <= num2; i++)
         produto+=num1;
 
-    printf("\n%d x %d = %d",num1,num2,produto);
+    printf("\n%d x %d = %d\n",num1,num2,produto);
     
     return 0;
 }

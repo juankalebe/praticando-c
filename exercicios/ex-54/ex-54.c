@@ -11,7 +11,8 @@ int main (){
     long double trigo=1;
     long double total=1;
 
-    for(int i=1; i<=64; i++){
+    for(int i=1; i<=63; i++){ 
+    // vai só até 63 pq o valor da primeira casa já está incluído antes do for
         printf("%.0Lf ",trigo);
         trigo = trigo*2;
         total += trigo;
@@ -19,6 +20,8 @@ int main (){
             printf("\n");
     }
 
-    printf("Total: %.0Lf\n",total);
+    printf("Total: %.0Lf\n",total); 
+    // no windows dá problema para imprimir um número tão grande
+    // aí tem que imprimir em outra função
     return 0;
 }

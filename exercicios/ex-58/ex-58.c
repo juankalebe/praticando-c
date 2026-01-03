@@ -30,6 +30,12 @@ int main (){
         }
     }
 
+    // solução Wagner Gaspar
+    int iy, jy;
+    // fazendo relação entre I e J
+    for(iy=1; iy<=9;iy+=2)
+        for(jy=6+iy;jy>=4+iy;jy--)
+            printf("I = %d  J = %d\n",iy,jy);
 
     return 0;
 }

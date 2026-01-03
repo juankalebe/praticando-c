@@ -12,16 +12,20 @@ int main (){
     do{
         printf("Coordenadas x e y: ");
         scanf("%f%f",&x,&y);
-
-        if (x>0 && y>0)
-            printf("(%.2f, %.2f) pertence ao primeiro quadrante\n", x,y);
-        else if(x<0 && y>0)
-            printf("(%.2f, %.2f) pertence ao segundo quadrante\n", x,y);
-        else if(x<0 && y<0)
-            printf("(%.2f, %.2f) pertence ao terceiro quadrante\n", x,y);
-        else if(x>0 && y<0)
-            printf("(%.2f, %.2f) pertence ao quarto quadrante\n", x,y);
-
+        if(x != 0 && y != 0) 
+        // poderia usar o apenas um &
+        // &: compara todas as expressões
+        // &&: compara da esquerda para a direita. Só compara o segundo caso o primeiro seja diferente de 0
+        // |:
+        // ||:
+            if (x>0 && y>0)
+                printf("(%.2f, %.2f) pertence ao primeiro quadrante\n", x,y);
+            else if(x<0 && y>0)
+                printf("(%.2f, %.2f) pertence ao segundo quadrante\n", x,y);
+            else if(x<0 && y<0)
+                printf("(%.2f, %.2f) pertence ao terceiro quadrante\n", x,y);
+            else if(x>0 && y<0)
+                printf("(%.2f, %.2f) pertence ao quarto quadrante\n", x,y);
     }while(!(x == 0 || y==0));
 
     return 0;
