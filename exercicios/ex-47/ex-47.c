@@ -11,7 +11,10 @@ int main (){
         scanf("%d",&num);
     }while(num<2);
 
-    for (int i=2; i <= num; i++){
+    for (int i=2; i <= num; i++){ 
+    // para melhorar o programa eu poderia alterar num para num/2 para poder
+    // diminuir a quantidade de verificações. Mas para isso eu preciso colocar
+    // o print no lado de fora desse for para poder incluir o caso do num=2
         if (num % i == 0 && num != i){
             printf("%d não é primo\n",num);
             break;

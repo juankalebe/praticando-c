@@ -14,6 +14,7 @@ int main (){
         dia++;
     }
 
-    printf("\nSoma: %d\n", cofre);
+    printf("\nSoma: %d\n", cofre); // 1 real = 100 centavos
+    printf("\nEm reais: R$%.2f\n", cofre/100.00); // convertendo de int para float
     return 0;
 }
